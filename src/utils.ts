@@ -191,8 +191,7 @@ export function isExactKeyMatch(): boolean {
 export async function saveCache(standalone: boolean) {
   try {
     if (!standalone && isExactKeyMatch()) {
-      core.info("Cache was exact key match, not saving");
-      return;
+      core.info("Cache was exact key match, overwriting");
     }
 
     const bucket = core.getInput("bucket", { required: true });
